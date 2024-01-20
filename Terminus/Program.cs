@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Add Entity Framewokr with InMemory database
+// Add Entity Framework with InMemory database
 builder.Services.AddDbContext<ApiContext>(options =>
     options.UseInMemoryDatabase("Terminus"));
 

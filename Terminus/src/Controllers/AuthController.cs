@@ -16,7 +16,11 @@ public class AuthController
         _cache = cache;
     }
 
-    // Get auth challenge
+    /// <summary>
+    /// GET a challenge for authentication
+    /// </summary>
+    /// <param name="nodeId">Node ID</param>
+    /// <returns>JsonResult of challenge</returns>
     [HttpGet]
     public JsonResult GetAuthChallenge(int nodeId)
     {
@@ -35,7 +39,7 @@ public class AuthController
             // Generate hash
             byte[] hash = SHA256.HashData(challenge.Concat(salt).ToArray());
             
-            // Write hash to cache
+            // Write hash to cache with 30 second sliding expiration
             var cacheEntryOptions = new MemoryCacheEntryOptions()
                 .SetSlidingExpiration(TimeSpan.FromSeconds(30));
             _cache.Set(nodeId, hash, cacheEntryOptions);
@@ -43,10 +47,7 @@ public class AuthController
             // Return challenge
             return new JsonResult(challenge);
         }
-        else
-        {
-            // Return 401 Unauthorized
-            return new JsonResult(new { error = "Node not found" });
-        }
+        
+        return new JsonResult(new { error = "Invalid node." });
     }
 }
