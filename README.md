@@ -95,7 +95,7 @@
 
   Hashing is done using the SHA256 algorithm and each node has a device-specific hash salt which is randomly generated when a node is initialized. This hash is also stored on the server, which checks the hashed challenge data sent by a node to a hash which the server itself has calculated. This hash is exclusively used for authorization of nodes and nothing else.
 
-  The primary goal of authorization is **not** the safeguarding of sensitive data (this is handled by encryption) but rather maintaining data integrity. By only fulfilling requests from authorized devices, the sending of bogus data is prevented.
+  The primary goal of authorization is **not** the safeguarding of sensitive data (this is handled by encryption) but rather maintaining data integrity. By only fulfilling requests from authorized devices, the sending of bogus data is prevented.<br />
   <img src="https://github.com/karl-k-m/Terminus/assets/74490726/dcc4e42c-11ca-4d03-870b-3ac8daae4d59" width="50%" height="50%"/>
 </p>
 
