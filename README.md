@@ -37,7 +37,7 @@
 <hr>
 
 <!-- FAQ -->
-<h2 id="tl-dr"> :question: FAQ</h2>
+<h2 id="faq"> :question: FAQ</h2>
 
 <p align="justify"> 
   <h3>Why?</h3>
