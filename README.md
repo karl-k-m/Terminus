@@ -103,4 +103,7 @@
 <h2 id="credits"> :link: Credits</h2>
 
 <p align="justify"> 
+  <ul>
+    <li>README.MD style stolen from: https://github.com/ma-shamshiri/Pacman-Game (I'm bad at making pretty README-s)</li>
+  </ul>
 </p>
