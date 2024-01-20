@@ -50,3 +50,57 @@
   Consider the following:
   <img src="https://imgs.xkcd.com/comics/security.png" />
 </p>
+
+<!-- OVERVIEW -->
+<h2 id="overview"> :page_with_curl: Overview</h2>
+
+<p align="justify"> 
+</p>
+
+<!-- DEPLOYMENT -->
+<h2 id="deployment"> :cloud: Deployment</h2>
+
+<p align="justify"> 
+</p>
+
+<!-- DESIGN PRINCIPLES -->
+<h2 id="design-principles"> :moyai: Design Principles</h2>
+
+<p align="justify"> 
+</p>
+
+<!-- SERVER -->
+<h2 id="server"> :file_cabinet: About the Server</h2>
+
+<p align="justify"> 
+</p>
+
+<!-- NODE -->
+<h2 id="node"> :pager: About the Node</h2>
+
+<p align="justify"> 
+</p>
+
+<!-- ENCRYPTION -->
+<h2 id="encryption"> :lock: Encryption</h2>
+
+<p align="justify"> 
+</p>
+
+<!-- AUTHENTICATION -->
+<h2 id="authentication"> :key: Authentication</h2>
+
+<p align="justify"> 
+  In Terminus, authentication exists to make sure that a device attempting to request or send data to the server is in fact an authorized node. This is handled via a hash challenge provided by the server to the client. Due to the fact that nodes are (besides requests to the server) airgapped and dedicated devices, using a hash challenge is appropriate and more secure than using a password. 
+
+  Hashing is done using the SHA256 algorithm and each node has a device-specific hash salt which is randomly generated when a node is initialized. This hash is also stored on the server, which checks the hashed challenge data sent by a node to a hash which the server itself has calculated. This hash is exclusively used for authorization of nodes and nothing else.
+
+  The primary goal of authorization is **not** the safeguarding of sensitive data (this is handled by encryption) but rather maintaining data integrity. By only fulfilling requests from authorized devices, the sending of bogus data is prevented.
+  <img src="https://github.com/karl-k-m/Terminus/assets/74490726/dcc4e42c-11ca-4d03-870b-3ac8daae4d59" width="50%" height="50%"/>
+</p>
+
+<!-- CREDITS -->
+<h2 id="credits"> :link: Credits</h2>
+
+<p align="justify"> 
+</p>
