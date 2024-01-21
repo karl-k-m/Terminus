@@ -114,5 +114,6 @@
 <p align="justify"> 
   <ul>
     <li>README.MD style stolen from: https://github.com/ma-shamshiri/Pacman-Game (I'm bad at making pretty README-s)</li>
+    <li>Terminus logo is generated via DALL-E 3.</li>
   </ul>
 </p>
