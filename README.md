@@ -67,7 +67,7 @@
 <h2 id="design-principles"> :moyai: Design Principles</h2>
 
 <p align="justify"> 
-  The design of the Terminus system is based on X core principles. They are as follows:
+  The design of the Terminus system is based on 3 core principles. They are as follows:
 
   <ol>
     <li>The central server is inherently unsecure and should be treated as such in all aspects of system architecture.</li>
