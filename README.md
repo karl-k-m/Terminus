@@ -41,7 +41,7 @@
 
 <p align="justify"> 
   <h3>Why?</h3>
-  No particular reason. This project was created mostly for personal entertainment and has very few (none?) true use cases. It exists for the sake of existing.
+  No particular reason. This project was created mostly for personal entertainment and a learning experience. I don't intend to claim that this system is practical, necessary, or frankly, even all that secure. It's just a fun and different way to approach data security.
   
   <h3>Are you a criminal?</h3>
   I'll tell you a secret - I pirated my university textbooks (don't tell the police).
@@ -67,6 +67,15 @@
 <h2 id="design-principles"> :moyai: Design Principles</h2>
 
 <p align="justify"> 
+  The design of the Terminus system is based on X core principles. They are as follows:
+
+  <ol>
+    <li>The central server is inherently unsecure and should be treated as such in all aspects of system architecture.</li>
+    <li>Any measures taken to protect the server against third parties are considered "extra", and should not be relied upon to protect sensitive data.</li>
+    <li>The physical security of nodes is paramount to the system. The system architecture is built on the assumption that the physical security of nodes is infallible.</li>
+  </ol>
+
+  Essentially, the point is to shift the burden of data security from digital methods to physical ones. It's arguably a lot more difficult to steal a device from a locked vault than data from a server.
 </p>
 
 <!-- SERVER -->
