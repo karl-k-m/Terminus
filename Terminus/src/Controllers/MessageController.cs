@@ -6,7 +6,9 @@ using Terminus.Models;
 
 namespace Terminus.Controllers;
 
-public class MessageController
+[ApiController]
+[Route("[controller]")]
+public class MessageController : ControllerBase
 {
     private readonly ApiContext _context;
     private readonly IMemoryCache _cache;
@@ -25,7 +27,7 @@ public class MessageController
     /// <param name="authHash">Authentication hash</param>
     /// <returns>JsonResult of messages</returns>
     [HttpGet]
-    public async Task<ActionResult<JsonResult>> GetMessages(int id, int[] connections, byte[] authHash)
+    public async Task<ActionResult<JsonResult>> GetMessages(int id, int[] connections, string authHash)
     {
         if (VerifyAuthHash(id, authHash))
         {
@@ -43,7 +45,7 @@ public class MessageController
     /// <param name="authHash">Authentication hash</param>
     /// <returns>JsonResult of success or error</returns>
     [HttpPost]
-    public async Task<ActionResult<string>> PostMessage(Message message, byte[] authHash)
+    public async Task<ActionResult<string>> PostMessage(Message message, string authHash)
     {
         if (VerifyAuthHash(message.Sender, authHash))
         {
@@ -61,14 +63,15 @@ public class MessageController
     /// <param name="id">Node ID</param>
     /// <param name="authHash">Authentication hash</param>
     /// <returns></returns>
-    public bool VerifyAuthHash(int id, byte[] authHash)
+    [NonAction]
+    public bool VerifyAuthHash(int id, string authHash)
     {
-        var hash = _cache.Get<byte[]>(id);
+        var hash = _cache.Get<string>(id);
         
         if (hash != null)
         {
             _cache.Remove(id);
-            return hash.SequenceEqual(authHash);
+            return authHash == hash;
         }
         
         return false;

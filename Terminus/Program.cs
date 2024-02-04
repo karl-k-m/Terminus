@@ -15,6 +15,9 @@ builder.Services.AddDbContext<ApiContext>(options =>
 // Add memory cache
 builder.Services.AddMemoryCache();
 
+// Add controllers here
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
